@@ -2,15 +2,12 @@
     Copyright (C) 2006-2007 Serotonin Software Technologies Inc.
  	@author Matthew Lohbihler
  */
-package com.serotonin.modbus4j.test;
+package com.serotonin.modbus4j;
 
-import com.serotonin.modbus4j.ModbusFactory;
-import com.serotonin.modbus4j.ModbusMaster;
 import com.serotonin.modbus4j.code.DataType;
 import com.serotonin.modbus4j.code.RegisterRange;
 import com.serotonin.modbus4j.ip.IpParameters;
 import com.serotonin.modbus4j.locator.NumericLocator;
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 
 /**
  * @author Matthew Lohbihler
@@ -30,6 +27,11 @@ public class ReadTest {
         master.setTimeout(8000);
         master.setRetries(0);
         master.init();
+
+        //        for (int i = 1; i < 5; i++) {
+        //            System.out.print("Testing " + i + "... ");
+        //            System.out.println(master.testSlaveNode(i));
+        //        }
 
         for (int i = 0; i < 10; i++) {
             try {
